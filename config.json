@@ -11,10 +11,10 @@
     "showLabsSettings": true,
     "brand": "Asozialer Chat",
     "branding": {
-        "welcomeBackgroundUrl": "https://64.media.tumblr.com/2ec8b14de00b73969e96986e48725b09/tumblr_owus3hGLai1tvdts7o1_1280.png",
-        "authHeaderLogoUrl": "https://avatars.githubusercontent.com/u/46082533?s=400&u=a3887aae6762945c2ae9b65da630a2c210eb4e29&v=4",
+        "welcomeBackgroundUrl": "https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/kangaroo_bg.png",
+        "authHeaderLogoUrl": "https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/WebsiteIcon.svg",
         "authFooterLinks": [
-            {"Für die asozialen dieser Welt.": "https://github.com/asozialesnetzwerk"}
+            {"Für die Asozialen dieser Welt.": "https://github.com/asozialesnetzwerk"}
         ]
     },
     "integrations_ui_url": "https://scalar-staging.vector.im/",
