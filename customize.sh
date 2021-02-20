@@ -4,7 +4,7 @@
 curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/kangaroo.svg > webapp/welcome/images/logo.svg
 curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/bio_brause.svg > webapp/welcome/images/matrix.svg
 curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/WebsiteIcon.svg > webapp/WebsiteIcon.svg
-
+curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/kangaroo_bg.png > webapp/themes/element/img/backgrounds/lake.jpg
 #replace Element with Asozialer Chat
 sed -i 's/Element/Asozialer Chat/g' webapp/index.html
 
