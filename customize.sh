@@ -10,12 +10,12 @@ find webapp/ -type f \( -name "*.html" -or -name "*.json" \) -exec \
     sed -i 's/Element/Asozialer Chat/g' {} +
 
 #replace icon
-sed -i 's/<link rel="shortcut icon" href="[^\n]*">/<link rel="shortcut icon" href="themes\/element\/img\/logos/element-logo.svg">/g' webapp/index.html
+sed -i 's|<link rel="shortcut icon" href="[^\n]*">|<link rel="shortcut icon" href="themes/element/img/logos/element-logo.svg">|g' webapp/index.html
 
 #improve colors:
-find webapp/ -type f \( -name "*.html" -or -name "*.svg" \) -exec \
+find webapp/ -type f \( -name "*.html" -or -name "*.svg" -or -name "*.css" \) -exec \
     sed -i 's/#0DBD8B/#C91616/g' {} +
-find webapp/ -type f \( -name "*.html" -or -name "*.svg" \) -exec \
+find webapp/ -type f \( -name "*.html" -or -name "*.svg" -or -name "*.css" \) -exec \
     sed -i 's/#0dbd8b/#C91616/g' {} +
-find webapp/ -type f \( -name "*.html" -or -name "*.svg" \) -exec \
+find webapp/ -type f \( -name "*.html" -or -name "*.svg" -or -name "*.css" \) -exec \
     sed -i 's/#368BD6/#000000/g' {} +
