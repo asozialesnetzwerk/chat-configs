@@ -15,4 +15,4 @@ sed -i 's/<link rel="shortcut icon" href="[^\n]*">/<link rel="shortcut icon" hre
 find webapp/ -type f -exec \
     sed -i 's/#0DBD8B/#C91616/g' {} +
 find webapp/ -type f -exec \
-    sed -i 's/#368BD6/#FFFFFF/g' {} +
+    sed -i 's/#368BD6/#000000/g' {} +
