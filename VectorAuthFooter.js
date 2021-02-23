@@ -16,18 +16,48 @@ limitations under the License.
 */
 
 import React from 'react';
+import SdkConfig from 'matrix-react-sdk/src/SdkConfig';
 
 const VectorAuthFooter = async () => {
-    const quoteObj = await fetch("https://zitate.prapsschnalinen.de/api/wrongquotes/random?min_rating=2");
-    const quoteUrl = `https://asozialesnetzwerk.github.io/zitate/#/${quoteObj.quote.id}-${quoteObj.author.id}`;
-    const quote = `»${quoteObj.quote.quote}«" -${quoteObj.author.author}`;
-    return (
-        <div className="mx_AuthFooter">
-            <a href={quoteUrl} key={quote} target="_blank" rel="noreferrer noopener">
-                {quote}
-            </a>
-        </div>
-    );
+    const quoteJsonStr = await fetch("https://zitate.prapsschnalinen.de/api/wrongquotes/random?min_rating=2")
+        .then((result) => result.text())
+        .catch((error) => error.toString());
+    try {
+        const quoteObj = JSON.parse(quoteJsonStr);
+        const quoteUrl = `https://asozialesnetzwerk.github.io/zitate/#/${quoteObj.quote.id}-${quoteObj.author.id}`;
+        const quote = `»${quoteObj.quote.quote}«" -${quoteObj.author.author}`;
+        return (
+            <div className="mx_AuthFooter">
+                <a href={quoteUrl} key={quote} target="_blank" rel="noreferrer noopener">
+                    {quote}
+                </a>
+            </div>
+        );
+    } catch (e) {
+        const brandingConfig = SdkConfig.get().branding;
+        let links = [
+            {"text": "Für die Asozialen dieser Welt.", "url": "https://github.com/asozialesnetzwerk"}
+        ];
+
+        if (brandingConfig && brandingConfig.authFooterLinks) {
+            links = brandingConfig.authFooterLinks;
+        }
+
+        const authFooterLinks = [];
+        for (const linkEntry of links) {
+            authFooterLinks.push(
+                <a href={linkEntry.url} key={linkEntry.text} target="_blank" rel="noreferrer noopener">
+                    {linkEntry.text}
+                </a>,
+            );
+        }
+
+        return (
+            <div className="mx_AuthFooter">
+                {authFooterLinks}
+            </div>
+        );
+    }
 };
 
 VectorAuthFooter.replaces = 'AuthFooter';
