@@ -18,7 +18,8 @@ limitations under the License.
 import React from 'react';
 import SdkConfig from 'matrix-react-sdk/src/SdkConfig';
 
-const VectorAuthFooter = async () => {
+const VectorAuthFooter = /* async*/ () => {
+    /*
     const quoteJsonStr = await fetch("https://zitate.prapsschnalinen.de/api/wrongquotes/random?min_rating=2")
         .then((result) => result.text())
         .catch((error) => error.toString());
@@ -33,31 +34,22 @@ const VectorAuthFooter = async () => {
                 </a>
             </div>
         );
-    } catch (e) {
-        const brandingConfig = SdkConfig.get().branding;
-        let links = [
-            {"text": "Für die Asozialen dieser Welt.", "url": "https://github.com/asozialesnetzwerk"}
-        ];
-
-        if (brandingConfig && brandingConfig.authFooterLinks) {
-            links = brandingConfig.authFooterLinks;
-        }
-
-        const authFooterLinks = [];
-        for (const linkEntry of links) {
-            authFooterLinks.push(
-                <a href={linkEntry.url} key={linkEntry.text} target="_blank" rel="noreferrer noopener">
-                    {linkEntry.text}
-                </a>,
-            );
-        }
-
-        return (
-            <div className="mx_AuthFooter">
-                {authFooterLinks}
-            </div>
-        );
+    } catch (e) {*/
+    const brandingConfig = SdkConfig.get().branding;
+    let links = [
+        {"text": "Für die Asozialen dieser Welt.", "url": "https://github.com/asozialesnetzwerk"}];
+    if (brandingConfig && brandingConfig.authFooterLinks) {
+        links = brandingConfig.authFooterLinks;
     }
+    // get random entry:
+    const linkEntry = links[Math.floor(Math.random() * links.length)];
+    return (
+        <div className="mx_AuthFooter">
+            <a href={linkEntry.url} key={linkEntry.text} target="_blank" rel="noreferrer noopener">
+                {linkEntry.text}
+            </a>
+        </div>
+    );// }
 };
 
 VectorAuthFooter.replaces = 'AuthFooter';
