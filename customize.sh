@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Download images
-curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/master/kangaroo.svg > webapp/welcome/images/logo.svg
-curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/master/bio_brause.svg > webapp/welcome/images/matrix.svg
-curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/master/kangaroo_bg.png > webapp/themes/element/img/backgrounds/lake.jpg
-curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/master/WebsiteIcon.svg > webapp/themes/element/img/logos/element-logo.svg
+curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/kangaroo.svg > webapp/welcome/images/logo.svg
+curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/bio_brause.svg > webapp/welcome/images/matrix.svg
+curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/kangaroo_bg.png > webapp/themes/element/img/backgrounds/lake.jpg
+curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/WebsiteIcon.svg > webapp/themes/element/img/logos/element-logo.svg
 #replace Element with Asozialer Chat
 find webapp/ -type f \( -name "*.html" -or -name "*.json" \) -exec \
     sed -i 's/Element/Asozialer Chat/g' {} +
