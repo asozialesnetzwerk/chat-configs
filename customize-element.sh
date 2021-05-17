@@ -7,7 +7,7 @@ curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/kanga
 curl https://raw.githubusercontent.com/asozialesnetzwerk/chat-configs/main/WebsiteIcon.svg > webapp/themes/element/img/logos/element-logo.svg
 
 #replace icon
-sed -i 's|<link rel="shortcut icon" href="[^\n]*">|<link rel="shortcut icon" href="themes/element/img/logos/element-logo.svg">|g' webapp/index.html
+sed -i 's|<link rel="shortcut icon" href="[^\n"]*">|<link rel="shortcut icon" href="themes/element/img/logos/element-logo.svg">|g' webapp/index.html
 
 #fix manifest
 sed -i  's|"src": "/|"src": "|g' webapp/manifest.json
