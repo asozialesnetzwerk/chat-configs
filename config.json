@@ -36,6 +36,7 @@
     "roomDirectory": {
         "servers": [
             "asozial.org",
+            "asozialer.club",
             "matrix.org",
             "gitter.im"
         ]
